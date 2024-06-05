@@ -9,10 +9,13 @@ class Hero extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'gender',
+    ];
 
-    public function user()
+    public function skills()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsToMany(Skill::class);
     }
-
 }

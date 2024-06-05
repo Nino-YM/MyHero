@@ -2,17 +2,18 @@
 
 namespace Database\Seeders;
 
-use App\Models\Hero;
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Hero;
 
 class HeroSeeder extends Seeder
 {
     /**
      * Run the database seeds.
+     *
+     * @return void
      */
-    public function run(): void
+    public function run()
     {
-        Hero::factory(20)->create();
+        Hero::factory()->count(50)->create();
     }
 }

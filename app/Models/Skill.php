@@ -8,8 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Skill extends Model
 {
     use HasFactory;
-    public function skill()
+
+    protected $fillable = [
+        'name',
+    ];
+
+    public function heroes()
     {
-        return $this->belongsTo(Skill::class);
+        return $this->belongsToMany(Hero::class);
     }
 }

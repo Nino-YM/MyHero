@@ -2,17 +2,22 @@
 
 namespace Database\Seeders;
 
-use App\Models\Skill;
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Skill;
 
 class SkillSeeder extends Seeder
 {
     /**
      * Run the database seeds.
+     *
+     * @return void
      */
-    public function run(): void
+    public function run()
     {
-        Skill::factory(20)->create();
+        $skills = ['astronomy', 'physics', 'chemistry', 'biology'];
+        
+        foreach ($skills as $skill) {
+            Skill::create(['name' => $skill]);
+        }
     }
 }
