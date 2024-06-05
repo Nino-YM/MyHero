@@ -9,13 +9,15 @@ class Hero extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'name',
-        'gender',
-    ];
+    protected $fillable = ['name', 'description', 'gender', 'image'];
 
     public function skills()
     {
         return $this->belongsToMany(Skill::class);
+    }
+    
+    public function getImageUrlAttribute()
+    {
+        return asset('images/' . $this->image);
     }
 }

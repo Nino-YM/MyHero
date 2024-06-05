@@ -2,22 +2,21 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
+    <h1>Heroes</h1>
+    <div class="row">
+        @foreach($heroes as $hero)
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="{{ asset('storage/' . $hero->image) }}" class="card-img-top" alt="{{ $hero->name }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $hero->name }}</h5>
+                        <p class="card-text">{{ $hero->description }}</p>
+                        <p class="card-text"><strong>Gender: </strong>{{ $hero->gender }}</p>
+                        <p class="card-text"><strong>Skills: </strong>{{ $hero->skills->pluck('name')->implode(', ') }}</p>
+                    </div>
                 </div>
             </div>
-        </div>
+        @endforeach
     </div>
 </div>
 @endsection

@@ -7,17 +7,16 @@ use App\Models\Skill;
 
 class SkillSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
-        $skills = ['astronomy', 'physics', 'chemistry', 'biology'];
-        
-        foreach ($skills as $skill) {
-            Skill::create(['name' => $skill]);
-        }
+        Skill::create([
+            'name' => 'Physics',
+        ]);
+
+        Skill::create([
+            'name' => 'Chemistry',
+        ]);
+
+        // Add more skills as needed
     }
 }
