@@ -9,14 +9,20 @@ class SkillSeeder extends Seeder
 {
     public function run()
     {
-        Skill::create([
-            'name' => 'Physics',
-        ]);
+        $skills = [
+            'Physics',
+            'Chemistry',
+            'Mathematics',
+            'Astrophysics',
+            'Environmental Science',
+            'Engineering',
+            'Medical',
+            'Computer Science'
+            // Add more skills as needed
+        ];
 
-        Skill::create([
-            'name' => 'Chemistry',
-        ]);
-
-        // Add more skills as needed
+        foreach ($skills as $skill) {
+            Skill::create(['name' => $skill]);
+        }
     }
 }

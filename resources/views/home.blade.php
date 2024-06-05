@@ -13,7 +13,12 @@
                             <h5 class="card-title">{{ $hero->name }}</h5>
                             <p class="card-text">{{ $hero->description }}</p>
                             <p class="card-text"><strong>Gender: </strong>{{ $hero->gender }}</p>
-                            <p class="card-text"><strong>Skills: </strong>{{ $hero->skills->pluck('name')->implode(', ') }}</p>
+                            <p class="card-text"><strong>Skills: </strong>
+                                @foreach($hero->skills as $skill)
+                                    <img src="{{ asset('storage/' . strtolower($skill->name) . '.png') }}" alt="{{ $skill->name }} icon" style="width: 20px; height: 20px;">
+                                    {{ $skill->name }}{{ !$loop->last ? ', ' : '' }}
+                                @endforeach
+                            </p>
                         </div>
                     </div>
                 </a>
