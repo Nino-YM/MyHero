@@ -18,7 +18,7 @@
 
     <!-- Styles -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="resources\css\app.css" rel="stylesheet">
+    <link href="{{ asset('resources/css/app.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -56,7 +56,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('users.edit', $user = Auth::user()) }}">My profile</a>
+                                    <a class="dropdown-item" href="{{ route('users.edit', Auth::user()) }}">My profile</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -73,6 +73,10 @@
                 </div>
             </div>
         </nav>
+
+        <main class="py-4">
+            @yield('content')
+        </main>
     </div>
 
     <!-- Scripts -->
