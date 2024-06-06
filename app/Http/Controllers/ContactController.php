@@ -21,6 +21,8 @@ class ContactController extends Controller
 
         ContactMessage::create([
             'user_id' => auth()->id(),
+            'name' => $request->name,
+            'email' => $request->email,
             'message' => $request->message,
         ]);
 
