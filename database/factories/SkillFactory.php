@@ -18,7 +18,6 @@ class SkillFactory extends Factory
     {
         return [
             'name' => $this->faker->word,
-            // Ensure other required fields are added here
         ];
     }
 }

@@ -22,8 +22,8 @@ class UserFactory extends Factory
         return [
             'name' => $this->faker->name,
             'email' => $this->faker->unique()->safeEmail,
-            'email_verified_at' => Carbon::now(), // Use Carbon for date handling
-            'password' => Hash::make('password'), // Use Hash facade for password hashing
+            'email_verified_at' => Carbon::now(), 
+            'password' => Hash::make('password'),
             'remember_token' => Str::random(10),
         ];
     }

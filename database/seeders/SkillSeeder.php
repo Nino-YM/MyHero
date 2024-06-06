@@ -18,7 +18,6 @@ class SkillSeeder extends Seeder
             'Engineering',
             'Medical',
             'Computer Science'
-            // Add more skills as needed
         ];
 
         foreach ($skills as $skill) {

@@ -11,7 +11,6 @@ class HeroSeeder extends Seeder
     public function run()
     {
         $heroes = [
-            // Existing Heroes
             [
                 'name' => 'Albert Einstein',
                 'description' => 'Developed the theory of relativity.',
@@ -33,7 +32,6 @@ class HeroSeeder extends Seeder
                 'image' => 'IsaacNewton.jpg',
                 'skills' => ['Physics', 'Mathematics']
             ],
-            // New Heroes
             [
                 'name' => 'Carl Sagan',
                 'description' => 'Popularized astronomy and contributed to extraterrestrial life research.',

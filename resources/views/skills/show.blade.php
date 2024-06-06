@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <h1>{{ $skill->name }}</h1>
-    <p>{{ $skill->description }}</p> <!-- Assuming you have a description field in your skills table -->
+    <p>{{ $skill->description }}</p>
 
     <h2>Scientists with {{ $skill->name }} skill</h2>
     <div class="row">
