@@ -14,7 +14,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ $hero->name }}</h5>
                         <p class="card-text">{{ $hero->description }}</p>
-                        <a href="{{ route('heroes.show', $hero) }}" class="btn btn-primary">View Profile</a>
+                        <a href="{{ route('heroes.show', $hero) }}" class="btn btn-primary">Learn more</a>
                     </div>
                 </div>
             </div>
