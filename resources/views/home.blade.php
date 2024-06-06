@@ -15,7 +15,7 @@
                             <p class="card-text"><strong>Gender: </strong>{{ $hero->gender }}</p>
                             <p class="card-text"><strong>Skills: </strong>
                                 @foreach($hero->skills as $skill)
-                                    <img src="{{ asset('storage/' . strtolower($skill->name) . '.png') }}" alt="{{ $skill->name }} icon" style="width: 20px; height: 20px;">
+                                    <img src="{{ asset('storage/' . strtolower($skill->name) . '.png') }}" alt="{{ $skill->name }} icon" style="width: auto; height: 20px;object-fit: contain;vertical-align: middle;">
                                     {{ $skill->name }}{{ !$loop->last ? ', ' : '' }}
                                 @endforeach
                             </p>
