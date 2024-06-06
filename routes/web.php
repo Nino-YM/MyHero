@@ -20,7 +20,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/heroes/{hero}', [HeroController::class, 'show'])->name('heroes.show');
 Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
 Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
-
+Route::get('/search', [HeroController::class, 'search'])->name('heroes.search');
 
 // Contact form for users
 Route::get('/contact', [ContactController::class, 'create'])->name('contact.create');
