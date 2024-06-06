@@ -29,5 +29,5 @@ Route::post('/contact', [ContactController::class, 'store'])->name('contact.stor
 // Admin view for messages
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/messages', [ContactController::class, 'index'])->middleware('can:viewAny,App\Models\ContactMessage')->name('admin.messages');
-    Route::delete('/admin/messages/{message}', [ContactController::class, 'destroy'])->middleware('can:delete,App\Models\ContactMessage')->name('contact.destroy');
+    Route::delete('/admin/messages/{message}', [ContactController::class, 'destroy'])->name('contact.destroy');
 });

@@ -3,7 +3,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ContactMessage;
-use Illuminate\Support\Facades\Auth;
 
 class ContactController extends Controller
 {
@@ -21,9 +20,7 @@ class ContactController extends Controller
         ]);
 
         ContactMessage::create([
-            'user_id' => Auth::id(),
-            'name' => $request->name,
-            'email' => $request->email,
+            'user_id' => auth()->id(),
             'message' => $request->message,
         ]);
 
