@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HeroController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\SkillController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -21,7 +22,8 @@ Route::get('/heroes/{hero}', [HeroController::class, 'show'])->name('heroes.show
 Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
 Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
 Route::get('/search', [HeroController::class, 'search'])->name('heroes.search');
-
+Route::get('/universe', [SkillController::class, 'index'])->name('skills.index');
+Route::get('/skills/{skill}', [SkillController::class, 'show'])->name('skills.show');
 // Contact form for users
 Route::get('/contact', [ContactController::class, 'create'])->name('contact.create');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
