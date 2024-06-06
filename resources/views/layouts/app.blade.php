@@ -32,6 +32,24 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <form class="d-flex" action="{{ route('heroes.search') }}" method="GET">
                         <input class="form-control me-2" type="search" name="query" placeholder="Search" aria-label="Search">
+
+                        <div class="dropdown me-2">
+                            <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="skillsDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                Skills
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="skillsDropdown">
+                                @foreach(App\Models\Skill::all() as $skill)
+                                <li>
+                                    <label class="dropdown-item" style="display: flex; align-items: center;">
+                                        <input type="checkbox" name="skills[]" value="{{ $skill->id }}" style="margin-right: 10px;">
+                                        <img src="{{ asset('storage/' . strtolower($skill->name) . '.png') }}" alt="{{ $skill->name }} icon" style="width: auto; height: 20px; object-fit: contain; vertical-align: middle; margin-right: 10px;">
+                                        {{ $skill->name }}
+                                    </label>
+                                </li>
+                                @endforeach
+                            </ul>
+                        </div>
+
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
                     <!-- Left Side Of Navbar -->

@@ -14,13 +14,25 @@ class HeroController extends Controller
     public function search(Request $request)
     {
         $query = $request->input('query');
+        $skills = $request->input('skills');
 
-        $heroes = Hero::where('name', 'LIKE', "%$query%")
-            ->orWhere('gender', 'LIKE', "%$query%")
-            ->orWhereHas('skills', function ($q) use ($query) {
-                $q->where('name', 'LIKE', "%$query%");
-            })
-            ->get();
+        $heroes = Hero::query();
+
+        if ($query) {
+            $heroes->where('name', 'LIKE', "%{$query}%")
+                ->orWhere('gender', 'LIKE', "%{$query}%")
+                ->orWhereHas('skills', function ($q) use ($query) {
+                    $q->where('name', 'LIKE', "%{$query}%");
+                });
+        }
+
+        if ($skills) {
+            $heroes->whereHas('skills', function ($q) use ($skills) {
+                $q->whereIn('skills.id', $skills);
+            });
+        }
+
+        $heroes = $heroes->get();
 
         return view('heroes.index', compact('heroes'));
     }
