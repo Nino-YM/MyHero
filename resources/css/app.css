@@ -9,7 +9,41 @@
 
 .hero-img {
     width: 100%;
-    height: 450px; /* Adjust this to your desired height */
+    height: 450px;
     object-fit: cover;
 }
 
+.skill-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333; 
+    margin-bottom: 20px; 
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.skill-icon {
+    width: auto;
+    height: 30px;
+    object-fit: contain;
+    vertical-align: middle;
+    margin-right: 10px; 
+}
+
+.skill-name {
+    font-size: 1.25rem;
+}
+
+.skill-link:hover {
+    transform: translateY(-5px); 
+    text-decoration: none;
+}
+
+.skill-link:hover .skill-name {
+    color: black; 
+}
+
+.container h1 {
+    color: black;
+    margin-bottom: 20px;
+}
