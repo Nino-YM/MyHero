@@ -4,7 +4,7 @@
 
 .hero-card:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px 1px rgba(98, 232, 236, 0.8);
 }
 
 .hero-img {
@@ -44,6 +44,17 @@
 }
 
 .container h1 {
-    color: black;
+    color: rgb(0, 0, 0);
     margin-bottom: 20px;
+}
+
+.app {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background: url(../../storage/app/public/backgroundunierse.jpg) no-repeat center center fixed;
+    background-size: cover; /* Ensure the background image covers the entire viewport */
+    background-color: #ffffff; /* Set a background color to fill the gaps */
+    color: #fff;
+    min-height: 100vh; /* Ensure the container has at least the height of the viewport */
 }
